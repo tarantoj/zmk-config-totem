@@ -331,10 +331,8 @@ workspace. This will parse `build.yaml` and build the firmware for all board and
 shield combinations listed there.
 
 To only build the firmware for a specific target, use `just build <target>`.
-This will build the firmware for all matching board and shield combinations. For
-instance, to build the firmware for my Corneish Zen, I can type
-`just build zen`, which builds both `corneish_zen_v2_left` and
-`corneish_zen_v2_right`. (`just list` shows all valid build targets.)
+This will build the firmware for all matching board and shield combinations.
+(`just list` shows all valid build targets.)
 
 Additional arguments to `just build` are passed on to `west`. For instance, a
 pristine build can be triggered with `just build all -p`.
