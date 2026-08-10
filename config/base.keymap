@@ -184,11 +184,6 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
 
-#ifndef ZMK_BASE_LAYER
-  #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, XLB, XRB, XLH, XRH) \
-      ZMK_LAYER(name, LT RT LM RM LB RB LH RH XLB XRB XLH XRH)
-#endif
-
 ZMK_BASE_LAYER(Base,
 //              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
                   &kp Q         &kp W         &kp E         &kp R         &kp T       ,   &kp Y         &kp U         &kp I         &kp O         &kp P       ,
@@ -197,7 +192,7 @@ ZMK_BASE_LAYER(Base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp TAB     , &kp Z         &kp X         &kp C         &kp V         &kp B       ,   &kp N         &kp M         &comma_morph  &dot_morph    &kp FSLH      , &kp ESC   ,
 //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
-                                               SMART_NUM  , &lt FN SPACE  &lt_spc NAV 0 , &kp RET       &kp BSPC    , MAGIC_SHIFT
+                                               SMART_NUM  , &lt FN SPACE  &lt_spc NAV 0 , &kp RET       &bs_del     , MAGIC_SHIFT
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 
 )
