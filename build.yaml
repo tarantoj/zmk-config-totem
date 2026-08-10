@@ -18,3 +18,9 @@ include:
   - board: corneish_zen_right@2.0.0//zmk
   - board: glove80_lh
   - board: glove80_rh
+  - board: xiao_ble//zmk
+    shield: totem_left
+    artifact-name: totem_left
+  - board: xiao_ble//zmk
+    shield: totem_right
+    artifact-name: totem_right

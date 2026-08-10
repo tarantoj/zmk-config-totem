@@ -2,7 +2,7 @@
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
 configuration. It consists of a 34-keys base layout that is re-used for various
-boards of different sizes, including a Corneish Zen, Glove80 and Planck.
+boards of different sizes, including a Corneish Zen, Glove80, Planck and TOTEM.
 
 The configuration currently builds against `v0.3` of upstream ZMK, extended by various [ZMK
 modules](https://github.com/search?q=topic%3Azmk-module+fork%3Atrue+owner%3Aurob+&type=repositories).
