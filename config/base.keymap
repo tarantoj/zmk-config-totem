@@ -79,17 +79,17 @@ ZMK_HOLD_TAP(mt_end, bindings = <&masked_end>, <&kp>; MT_CORE)
 
 #define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
 #define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
-#define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
-#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
-#define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
-#define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+#define NAV_UP    &mt LG(UP)   UP    // Tap: up    | Long-tap: start of doc.
+#define NAV_DOWN  &mt LG(DOWN) DOWN  // Tap: down  | Long-tap: end   of doc.
+#define NAV_BSPC  &mt LA(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define NAV_DEL   &mt LA(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
-// Mask CTRL on left/right hold to avoid accidental jumps to start/end of doc.
+// Mask Cmd on left/right hold to avoid accidental jumps to start/end of doc.
 #define MASK_MODS(NAME, MODS, BINDING)                                         \
   ZMK_MOD_MORPH(NAME, bindings = <BINDING>, <BINDING>; mods = <MODS>;)
 
-MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
-MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
+MASK_MODS(masked_home, (MOD_LGUI), &kp LG(LEFT))
+MASK_MODS(masked_end,  (MOD_LGUI), &kp LG(RIGHT))
 
 /* Magic-shift & auto-layers */
 
@@ -129,8 +129,8 @@ ZMK_TRI_STATE(
 
 /* Custom behaviors */
 
-// Alt+Tab swapper, requires tri-state module.
-ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+// Cmd+Tab app swapper, requires tri-state module.
+ZMK_TRI_STATE(swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
 
 // Define mod-morph with a *single* mod trigger for less repetition.
@@ -165,7 +165,7 @@ ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
               mods = <(MOD_LSFT|MOD_RSFT)>; keep-mods = <MOD_RSFT>;)
 
 // Tap: copy | double-tap: cut.
-ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
+ZMK_TAP_DANCE(copy_cut, bindings = <&kp LG(C)>, <&kp LG(X)>;
               tapping-term-ms = <200>;)
 
 // Sticky shift + leader.
@@ -173,11 +173,9 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 // Misc aliases. [TODO: clean up]
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
-#define DSK_PREV  &hmr LCTRL LG(LC(LEFT)) // Previous desktop.
-#define DSK_NEXT  &hmr LALT LG(LC(RIGHT)) // Next     desktop.
-#define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
-#define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
-#define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
+#define DSK_PREV  &hmr LCTRL LC(LEFT)     // Previous space.
+#define DSK_NEXT  &hmr LALT LC(RIGHT)     // Next     space.
+#define DSK_MGR   &kp LC(UP)              // Mission Control.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
 /* Totem keymap: 5-key top/middle rows, 6-key bottom rows, and 3-key thumbs. */
@@ -204,7 +202,7 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 //              ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-                  &kp LA(F4)    ___           &kp LS(TAB)   &swapper      ___         ,   &kp PG_UP     NAV_BSPC      &kp PG_DN     NAV_DEL       ___         ,
+                  &kp LG(W)     ___           &kp LS(TAB)   &swapper      ___         ,   &kp PG_UP     NAV_BSPC      &kp PG_DN     NAV_DEL       ___         ,
 //              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                   &sk LGUI      &sk LALT      &sk LSHFT     &sk LCTRL     ___         ,   NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT     &kp RET     ,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
@@ -221,7 +219,7 @@ ZMK_BASE_LAYER(Fn,
 //              ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                   &hml LGUI F11 &hml LALT F4  &hml LSHFT F5 &hml LCTRL F6 ___         ,   ___           DSK_PREV      VOL_DOWN      DSK_NEXT      ___         ,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    ___         , &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   PIN_APP       PIN_WIN       DSK_MGR       ___           ___         , ___         ,
+    ___         , &kp F10       &kp F1        &kp F2        &kp F3        ___         ,   ___           ___           DSK_MGR       ___           ___         , ___         ,
 //╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
                                                ___         , ___           ___         ,   &kp C_MUTE    &kp C_PP    , ___
 //                                          ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
