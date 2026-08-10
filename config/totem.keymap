@@ -1,11 +1,12 @@
 #define CONFIG_WIRELESS
-#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, XLB, XRB, XLH, XRH) \
-    ZMK_LAYER(                                                                 \
-        name,                                                                  \
-                 LT RT                                                         \
-                 LM RM                                                         \
-        XLB       LB RB       XRB                                              \
-        XLH       LH RH       XRH                                              \
+// Keep layer arguments in physical Totem order: rows, outer bottom keys, then thumbs.
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, XLB, LB, RB, XRB, XLH, LH, RH, XRH) \
+    ZMK_LAYER(                                                                  \
+        name,                                                                   \
+                 LT RT                                                          \
+                 LM RM                                                          \
+        XLB       LB RB       XRB                                               \
+        XLH       LH RH       XRH                                               \
     )
 
 #include "zmk-helpers/key-labels/totem.h"
