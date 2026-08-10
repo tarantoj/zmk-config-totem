@@ -1,11 +1,11 @@
 #define CONFIG_WIRELESS
-#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                   \
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH, XLB, XRB, XLH, XRH) \
     ZMK_LAYER(                                                                 \
         name,                                                                  \
                  LT RT                                                         \
                  LM RM                                                         \
-        &kp Q    LB RB    &kp SQT                                              \
-        &none    LH RH    &none                                                \
+        XLB       LB RB       XRB                                              \
+        XLH       LH RH       XRH                                              \
     )
 
 #include "zmk-helpers/key-labels/totem.h"
