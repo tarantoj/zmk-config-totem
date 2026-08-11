@@ -36,7 +36,6 @@ parse_config:
     "&win_right": "Tile →"
     "&win_up": "Tile ↑"
     "&win_down": "Tile ↓"
-    "&cmd_tab": "Cmd+Tab"
 
     "&hml LS(LALT)TAB": Tab
     "&hm_combo_ldr": Leader

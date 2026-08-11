@@ -199,7 +199,7 @@ text.br, use.br { fill: var(--color-sys); }
 </g>
 <g transform="translate(34, 209) rotate(-10.0)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
-<text x="0" y="1" class="key tap">Cmd+Tab</text>
+<text x="0" y="1" class="key tap">NWin</text>
 <a href="#Win">
 <text x="0" y="22" class="key hold layer-activator">Win</text>
 </a></g>
