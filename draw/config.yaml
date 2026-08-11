@@ -32,6 +32,11 @@ parse_config:
     "&magic_shift": { "t": Magic, "h": "Shift" }
     "&smart_mouse": Smart Mouse
 
+    "&win_left": "Tile ←"
+    "&win_right": "Tile →"
+    "&win_up": "Tile ↑"
+    "&win_down": "Tile ↓"
+
     "&hml LS(LALT)TAB": Tab
     "&hm_combo_ldr": Leader
     "&hm_combo_ldrsh": Shift+Leader
