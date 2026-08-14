@@ -1,5 +1,11 @@
 <svg width="871" height="2280" viewBox="0 0 871 2280" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>/* start glyphs */
+<svg id="mdi:brightness-4">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-brightness-4" viewBox="0 0 24 24"><path d="M12,18C11.11,18 10.26,17.8 9.5,17.45C11.56,16.5 13,14.42 13,12C13,9.58 11.56,7.5 9.5,6.55C10.26,6.2 11.11,6 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z" /></svg>
+</svg>
+<svg id="mdi:brightness-6">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-brightness-6" viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg>
+</svg>
 <svg id="mdi:play-pause">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-play-pause" viewBox="0 0 24 24"><path d="M3,5V19L11,12M13,19H16V5H13M18,5V19H21V5" /></svg>
 </svg>
@@ -452,8 +458,9 @@ text.br, use.br { fill: var(--color-sys); }
 <g transform="translate(330, 65)" class="key trans keypos-4">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
 </g>
-<g transform="translate(520, 65)" class="key trans keypos-5">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
+<g transform="translate(520, 65)" class="key keypos-5">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
+<use href="#mdi:brightness-4" xlink:href="#mdi:brightness-4" x="-8" y="-6" height="15" width="15.0" class="key tap glyph mdi:brightness-4"/>
 </g>
 <g transform="translate(580, 56)" class="key keypos-6">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
@@ -467,8 +474,9 @@ text.br, use.br { fill: var(--color-sys); }
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
 <use href="#mdi:skip-forward" xlink:href="#mdi:skip-forward" x="-8" y="-6" height="15" width="15.0" class="key tap glyph mdi:skip-forward"/>
 </g>
-<g transform="translate(773, 113) rotate(10.0)" class="key trans keypos-9">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
+<g transform="translate(773, 113) rotate(10.0)" class="key keypos-9">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
+<use href="#mdi:brightness-6" xlink:href="#mdi:brightness-6" x="-8" y="-6" height="15" width="15.0" class="key tap glyph mdi:brightness-6"/>
 </g>
 <g transform="translate(87, 168) rotate(-10.0)" class="key keypos-10">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
